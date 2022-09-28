@@ -1,85 +1,29 @@
-﻿public class NumberConvert : ConvertAbs<int, string>
+﻿public class NumberConvert : Convert<int, string>
 {
+	private string[] intToStrDict = new string[16] 
+		{"0", "1", "2", "3", "4", "5", "6", "7", 
+		"8", "9", "A", "B", "C", "D", "E", "F"};
+	private Dictionary <string, int> strToIntDict = new Dictionary <string, int>()
+		{{"0", 0}, {"1", 1}, {"2", 2}, {"3", 3}, 
+		{"4", 4}, {"5", 5}, {"6", 6}, {"7", 7}, 
+		{"8", 8}, {"9", 9}, {"A", 10}, {"B", 11}, 
+		{"C", 12}, {"D", 13}, {"E", 14}, {"F", 15}};
 	public override string ConvertFrom (int i)
 	{
-		switch (i)
+		if (i >= 0 && i < 16)
 		{
-			case 0:
-				return "0";
-			case 1:
-				return "1";
-			case 2:
-				return "2";
-			case 3:
-				return "3";
-			case 4:
-				return "4";
-			case 5:
-				return "5";
-			case 6:
-				return "6";
-			case 7:
-				return "7";
-			case 8:
-				return "8";
-			case 9:
-				return "9";
-			case 10:
-				return "A";
-			case 11:
-				return "B";
-			case 12:
-				return "C";
-			case 13:
-				return "D";
-			case 14:
-				return "E";
-			case 15:
-				return "F";
-			default:
-				return "";
+			return intToStrDict[i];
 		}
+		throw new Exception("Incorrect input");
 	}
 	public override int ConvertTo(string i)
 	{
-		i = i.ToUpper();
-		switch (i)
+		string upperChar = i.ToUpper();
+		if (strToIntDict.ContainsKey(upperChar))
 		{
-			case "0":
-				return 0;
-			case "1":
-				return 1;
-			case "2":
-				return 2;
-			case "3":
-				return 3;
-			case "4":
-				return 4;
-			case "5":
-				return 5;
-			case "6":
-				return 6;
-			case "7":
-				return 7;
-			case "8":
-				return 8;
-			case "9":
-				return 9;
-			case "A":
-				return 10;
-			case "B":
-				return 11;
-			case "C":
-				return 12;
-			case "D":
-				return 13;
-			case "E":
-				return 14;
-			case "F":
-				return 15;
-			default:
-				return -1;
+			return strToIntDict[upperChar];
 		}
+		throw new Exception("Incorrect app convertation");
 	}
 	public int ConvertTo(char i)
 	{

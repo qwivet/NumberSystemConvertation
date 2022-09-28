@@ -1,7 +1,4 @@
-﻿//Якщо не важко, підкажи пж, як зберігати посилання на об'єкт в окремій змінній в C#,
-//бо якби я знав, тут був би не класс, а структура
-
-class FloatPointPositionController
+﻿class FloatPointPositionController
 {
 	int floatPosition = -1;
 
