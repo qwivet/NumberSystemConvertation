@@ -21,14 +21,12 @@
 		double floatMult = 1;
 		string result = "";
 
-		//З початкового в десяткове
 		for (int i = floatPosition.FloatPosition + 1; i < exp.Length; i++)
 		{
 			floatMult /= (double)startSystem;
 			floatExp += numConv.ConvertTo(exp[i]) * floatMult;
 		}
 
-		//З десяткового в кінцеве
 		for (int i = 0; i < accuracy; i++)
 		{
 			floatExp *= endSystem;

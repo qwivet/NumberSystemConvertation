@@ -23,7 +23,7 @@ answer += intPartResult.Convert(expression);
 
 
 //Якщо дробове
-if (!floatPosition.IsFloat(answer.Length))
+if (floatPosition.IsFloat(answer.Length))
 {
 	NumberSystemFloatConvert floatPartResult = new NumberSystemFloatConvert(firstSystem, secondSystem, accuracy, numberConvert, floatPosition);
 	answer += '.';
