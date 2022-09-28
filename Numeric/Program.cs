@@ -1,23 +1,23 @@
 ﻿Console.OutputEncoding = System.Text.Encoding.Default;
 
-Console.Write("Система числення вхідного виразу (від 2 до 16): ");
-int firstSystem = Convert.ToInt32(Console.ReadLine());
-Console.Write("Система числення вихідного виразу (від 2 до 16): ");
-int secondSystem = Convert.ToInt32(Console.ReadLine());
-Console.Write("Точність (знаків після коми): ");
-int accuracy = Convert.ToInt32(Console.ReadLine());
-Console.Write("Вираз: ");
-string? expression = Console.ReadLine();
+string[] outputs = new string[4];
+ConsoleInOut consoleInOut = new ConsoleInOut(DataStorage.Inputs, outputs, DataStorage.CheckConditions);
+consoleInOut.WriteReadCycle();
+
+int firstSystem = Convert.ToInt32(outputs[0]);
+int secondSystem = Convert.ToInt32(outputs[1]);
+int accuracy = Convert.ToInt32(outputs[2]);
+string expression = outputs[3];
 
 NumberConvert numberConvert = new NumberConvert();
 FloatPointPositionController floatPosition = new FloatPointPositionController();
-NumberSystemIntConvert intPartResult;
 string answer = "";
 
+NumberSystemIntConvert intPartResult;
 intPartResult = new NumberSystemIntConvert(firstSystem, secondSystem, numberConvert, floatPosition);
 answer += intPartResult.Convert(expression);
 
-if (floatPosition.IsFloat(answer.Length))
+if (floatPosition.IsFloat(expression.Length))
 {
 	NumberSystemFloatConvert floatPartResult = new NumberSystemFloatConvert(firstSystem, secondSystem, accuracy, numberConvert, floatPosition);
 	answer += '.';
