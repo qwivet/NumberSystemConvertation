@@ -15,7 +15,13 @@ class ConsoleInOut
 		this.outputs = outputs;
 		this.checkConditions = checkConditions;
 	}
-
+//
+//
+//
+// ПЕРЕРОБИТИ БЛЯТЬ, ЩОБ ПІСЛЯ НЕПРАВИЛЬНОГО ВВОДУ ПОВТОРИЛО ПИТАННЯ
+//
+//
+//
 	public void WriteReadCycle()
 	{
 		for (int i = 0; i < inputs.Length; i++)
