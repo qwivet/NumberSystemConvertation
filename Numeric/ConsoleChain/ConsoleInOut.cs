@@ -15,24 +15,22 @@ class ConsoleInOut
 		this.outputs = outputs;
 		this.checkConditions = checkConditions;
 	}
-//
-//
-//
-// ПЕРЕРОБИТИ БЛЯТЬ, ЩОБ ПІСЛЯ НЕПРАВИЛЬНОГО ВВОДУ ПОВТОРИЛО ПИТАННЯ
-//
-//
-//
+
 	public void WriteReadCycle()
 	{
 		for (int i = 0; i < inputs.Length; i++)
 		{
-			Console.Write(inputs[i]);
-			outputs[i] = Console.ReadLine();
-			if (!checkConditions[i](outputs[i]))
+			bool isCorrect = false;
+			while (!isCorrect)
 			{
-				throw new Exception("Incorrect input");
+				Console.Write(inputs[i]);
+				outputs[i] = Console.ReadLine();
+				isCorrect = checkConditions[i](outputs[i]);
+				if (!checkConditions[i](outputs[i]))
+				{
+					Console.WriteLine("Incorrect input");
+				}
 			}
-
 		}
 
 	}
