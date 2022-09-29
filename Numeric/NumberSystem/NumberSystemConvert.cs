@@ -1,8 +1,8 @@
 ﻿abstract class NumberSystemConvert
 {
-	int startSystem;
-	int endSystem;
-	NumberConvert numberConvert;
-	FloatPointPositionController floatPositionController;
-	abstract public string Convert(string i);
+	protected int startSystem;
+	protected int endSystem;
+	protected NumberConvert numberConvert;
+	protected int floatPosition;
+	abstract public string Convert(string i, ref int floatPos);
 }
