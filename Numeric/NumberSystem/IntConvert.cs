@@ -1,6 +1,6 @@
 ﻿class IntConvert : NumberSystemConvert
 {
-	public IntConvert (int startSystem, int endSystem, NumberConvert numberConvert)
+	public IntConvert (int startSystem, int endSystem, InputConvert numberConvert)
 	{
 		this.startSystem = startSystem;
 		this.endSystem = endSystem;
@@ -35,7 +35,7 @@
 			}
 			else
 			{
-				numbers[i] = numberConvert.ConvertTo(exp[i]);
+				numbers[i] = numberConvert.ConvertTo(exp[i], i);
 			}
 		}
 

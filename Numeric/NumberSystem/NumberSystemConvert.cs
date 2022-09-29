@@ -2,7 +2,7 @@
 {
 	protected int startSystem;
 	protected int endSystem;
-	protected NumberConvert numberConvert;
+	protected InputConvert numberConvert;
 	protected int floatPosition;
 	abstract public string Convert(string i, ref int floatPos);
 }

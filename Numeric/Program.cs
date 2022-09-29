@@ -6,6 +6,7 @@ consoleInOut.WriteReadCycle();
 
 MainCalculations calc = new MainCalculations
 	(Convert.ToInt32(outputs[0]),Convert.ToInt32(outputs[1]),
-	Convert.ToInt32(outputs[2]),outputs[3]);
+	Convert.ToInt32(outputs[2]),outputs[3],
+	new InputConvert(outputs[3]));
 
-Console.WriteLine(calc.Execute());
+Console.WriteLine(string.Concat("\nРезультат:\t\t\t\t\t\t", calc.Execute()));

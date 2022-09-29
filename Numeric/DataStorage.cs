@@ -2,17 +2,17 @@
 {
 	private static readonly Condition[] checkConditions = new Condition[]
 	{
-	(x) => { return 2 <= Convert.ToInt32(x) && Convert.ToInt32(x) <= 16; },
-	(x) => { return 2 <= Convert.ToInt32(x) && Convert.ToInt32(x) <= 16; },
-	(x) => { return 0 <= Convert.ToInt32(x) && Convert.ToInt32(x) <= 99; },
+	(x) => { try { return 2 <= Convert.ToInt32(x) && Convert.ToInt32(x) <= 16; } catch{ return false; } },
+	(x) => { try { return 2 <= Convert.ToInt32(x) && Convert.ToInt32(x) <= 16; } catch{ return false; } },
+	(x) => { try { return 0 <= Convert.ToInt32(x) && Convert.ToInt32(x) <= 99; } catch{ return false; } },
 	(x) => { return true; }
 	};
 	private static readonly string[] inputs = new string[4]
 	{
-	"Система числення вхідного виразу (від 2 до 16): ",
-	"Система числення вихідного виразу (від 2 до 16): ",
-	"Точність (знаків після коми): ",
-	"Вираз: "
+	"Система числення вхідного виразу (від 2 до 16):\t\t",
+	"Система числення вихідного виразу (від 2 до 16):\t",
+	"Точність (знаків після коми):\t\t\t\t",
+	"Вираз:\t\t\t\t\t\t\t"
 	};
 
 	public static string[] Inputs => inputs;

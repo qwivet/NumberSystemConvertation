@@ -4,20 +4,18 @@
 	private int secondSystem;
 	private int accuracy;
 	private string expression;
-	NumberConvert numberConvert;
+	InputConvert numberConvert;
 
 	int floatPosition = 0;
 
-	public MainCalculations(int firstSystem, int secondSystem, int accuracy, string expression)
+	public MainCalculations(int firstSystem, int secondSystem, int accuracy, string expression, InputConvert inputConvert)
 	{
 		this.firstSystem = firstSystem;
 		this.secondSystem = secondSystem;
 		this.accuracy = accuracy;
 		this.expression = expression;
-		numberConvert = new NumberConvert();
+		this.numberConvert = inputConvert;
 	}
-
-	public NumberConvert NumberConvert { set => numberConvert = value; }
 
 	public string Execute ()
 	{

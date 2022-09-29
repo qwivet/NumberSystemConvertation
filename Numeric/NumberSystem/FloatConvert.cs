@@ -2,7 +2,7 @@
 {
 	int accuracy = 0;
 
-	public FloatConvert(int startSystem, int endSystem, int accuracy, NumberConvert numberConvert)
+	public FloatConvert(int startSystem, int endSystem, int accuracy, InputConvert numberConvert)
 	{
 		this.startSystem = startSystem;
 		this.endSystem = endSystem;
@@ -19,7 +19,7 @@
 		for (int i = floatPos + 1; i < exp.Length; i++)
 		{
 			floatMult /= (double)startSystem;
-			floatExp += numberConvert.ConvertTo(exp[i]) * floatMult;
+			floatExp += numberConvert.ConvertTo(exp[i], i) * floatMult;
 		}
 
 		for (int i = 0; i < accuracy; i++)
