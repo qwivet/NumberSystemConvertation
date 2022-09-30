@@ -36,6 +36,5 @@
 	{
 			FloatConvert floatPartResult = new FloatConvert(firstSystem, secondSystem, accuracy, numberConvert);
 			return string.Concat('.', floatPartResult.Convert(expression, ref floatPosition));
-
 	}
 }
